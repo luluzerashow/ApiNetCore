@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Api.Domain/1.0.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "6.0.0-preview.2.21154.6"
+        },
+        "runtime": {
+          "Api.Domain.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/6.0.0-preview.2.21154.6": {
+        "runtime": {
+          "lib/netstandard2.1/System.ComponentModel.Annotations.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.15406"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Api.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.ComponentModel.Annotations/6.0.0-preview.2.21154.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iN7n/Po2DssEh9/3mBqVAob1eFCPUJmF4bwF8YzMoU4x5d1f+3mV99K00sQjT9VJjy4qeWWnANKQr+3151bKOA==",
+      "path": "system.componentmodel.annotations/6.0.0-preview.2.21154.6",
+      "hashPath": "system.componentmodel.annotations.6.0.0-preview.2.21154.6.nupkg.sha512"
+    }
+  }
+}

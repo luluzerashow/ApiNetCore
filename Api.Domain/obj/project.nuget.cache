@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QytPcHVjFdCTMxsPI2vJXifMTFm86h1QkcrmbZZl+RIiFp4bEtQguwJgm2/V0c5u2QAfIaOtwH8SYe8R7TIU+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Luluzera\\Desktop\\Projetos\\AngularWebApiNetCore\\ApiNetCore\\Api.Domain\\Api.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Luluzera\\.nuget\\packages\\system.componentmodel.annotations\\6.0.0-preview.2.21154.6\\system.componentmodel.annotations.6.0.0-preview.2.21154.6.nupkg.sha512"
+  ],
+  "logs": []
+}
