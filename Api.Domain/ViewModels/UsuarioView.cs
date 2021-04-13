@@ -11,8 +11,8 @@ namespace Api.Domain.ViewModels
         
         public string Nome { get; set; }
 
-        public int PerfilId { get; set; }
+        public string Senha { get; set; }
 
-        public string PerfilNome { get; set; }
+        public int PerfilId { get; set; }
     }
 }

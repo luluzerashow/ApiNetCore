@@ -1,4 +1,5 @@
-﻿using Api.Repository.Services;
+﻿using Api.Domain.ViewModels;
+using Api.Repository.Services;
 using System.Threading.Tasks;
 
 namespace Api.Application
@@ -44,6 +45,17 @@ namespace Api.Application
             var service = new ServiceUsuario();
 
             bool result = await service.DeleteAsyncById(id);
+
+            return result;
+        }
+
+
+        public async Task<bool> CreateAsync(UsuarioView dados)
+        {
+            //Fazer validações se o user esta no padrão certo;
+            var service = new ServiceUsuario();
+
+            bool result = await service.CreateAsync(dados);
 
             return result;
         }

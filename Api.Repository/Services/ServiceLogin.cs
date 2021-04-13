@@ -53,5 +53,25 @@ namespace Api.Repository.Services
                 return json;
             }
         }
+
+        public async Task<string> GetPerfisCombo()
+        {
+
+            using (var context = new EntityDbContext())
+            {
+
+                //Coletar dados para criar o cookie
+               var result = await (from perfis in context.Perfildbset
+                            select new
+                            {
+                            Value = perfis.id,
+                            ViewValue = perfis.Nome
+                        }).ToListAsync();
+
+                var json = JsonSerializer.Serialize(result);
+
+                return json;
+            }
+        }
     }
 }

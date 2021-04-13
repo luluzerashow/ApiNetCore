@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4EtxPjBCUrr7rK26EGOrju/IPaen0HXHhyT96UD/ta6P+DejEsVQoaWCmfpX1jzUecR5P0m3QmMqF93DVBrmJQ==",
+  "dgSpecHash": "QzZsdd5esGMiQNtO+9+ciVwag/HkgeyMp6wkhFSRoSZinKTfSn3tKO/ITQZi6ATebF2qZ7jM/MguKohJyV5hUQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luluzera\\Desktop\\Projetos\\AngularWebApiNetCore\\ApiNetCore\\Api.WebApi\\Api.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\Luluzera\\Desktop\\Projetos\\GIT\\ApiNetCore\\Api.WebApi\\Api.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Luluzera\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

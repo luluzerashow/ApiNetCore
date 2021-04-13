@@ -29,5 +29,21 @@ namespace Api.Application
                 return jsonstring;
             }
         }
+
+        public async Task<string> GetPerfisCombo()
+        {
+            var service = new ServiceLogin();
+
+            var jsonstring = await service.GetPerfisCombo();
+
+            if (jsonstring == "[]")
+            {
+                return "Null";
+            }
+            else
+            {
+                return jsonstring;
+            }
+        }
     }
 }

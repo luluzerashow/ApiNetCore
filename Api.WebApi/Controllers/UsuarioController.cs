@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Api.Application;
+using Api.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.WebApi.Controllers
@@ -56,7 +57,7 @@ namespace Api.WebApi.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        [Route("DeleteByIdAsync/{id}")]
+        [Route("DeleteByIdAsync/{id}", Name = "DeleteByIdAsync")]
         public async Task<IActionResult> DeleteByIdAsync(int id)
         {
             try
@@ -64,6 +65,27 @@ namespace Api.WebApi.Controllers
                 var _appusuario = new appUsuario();
                 //Chamando camada de aplicação
                 return Ok(await _appusuario.DeleteAsyncById(id));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+            
+        }
+
+        [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        // [Consumes("application/json")]
+        [Route("CreateAsync", Name = "CreateAsync")]
+        public async Task<IActionResult> CreateAsync(UsuarioView dados)
+        {
+            try
+            {
+                var _appusuario = new appUsuario();
+                //Chamando camada de aplicação
+                return Ok(await _appusuario.CreateAsync(dados));
             }
             catch (ArgumentException e)
             {

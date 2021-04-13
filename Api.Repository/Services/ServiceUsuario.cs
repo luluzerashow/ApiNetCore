@@ -3,6 +3,10 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using Api.Domain.ViewModels;
+using Api.Domain.Models;
+using System;
 
 namespace Api.Repository.Services
 {
@@ -59,6 +63,33 @@ namespace Api.Repository.Services
 
                     var Usuario = await context.Usuariodbset.FindAsync(id);
                     context.Usuariodbset.Remove(Usuario);
+                    await context.SaveChangesAsync();
+
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task<bool> CreateAsync (UsuarioView dados)
+        {
+            using (var context = new EntityDbContext())
+            {
+                try
+                {
+                    var usuariomodel = new Usuario();
+
+                    usuariomodel.User = dados.User.ToString();
+                    usuariomodel.Senha = dados.Senha.ToString();
+                    usuariomodel.Nome = dados.Nome.ToString();
+                    usuariomodel.PerfilId = dados.PerfilId;
+                    usuariomodel.DataCriacao = DateTime.Now;
+                    usuariomodel.DataAtualizacao = DateTime.Now;
+
+                    await context.Usuariodbset.AddAsync(usuariomodel);
                     await context.SaveChangesAsync();
 
                     return true;

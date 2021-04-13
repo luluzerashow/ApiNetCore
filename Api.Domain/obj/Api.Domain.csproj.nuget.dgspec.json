@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luluzera\\Desktop\\Projetos\\AngularWebApiNetCore\\ApiNetCore\\Api.Domain\\Api.Domain.csproj": {}
+    "C:\\Users\\Luluzera\\Desktop\\Projetos\\GIT\\ApiNetCore\\Api.Domain\\Api.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luluzera\\Desktop\\Projetos\\AngularWebApiNetCore\\ApiNetCore\\Api.Domain\\Api.Domain.csproj": {
+    "C:\\Users\\Luluzera\\Desktop\\Projetos\\GIT\\ApiNetCore\\Api.Domain\\Api.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luluzera\\Desktop\\Projetos\\AngularWebApiNetCore\\ApiNetCore\\Api.Domain\\Api.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Luluzera\\Desktop\\Projetos\\GIT\\ApiNetCore\\Api.Domain\\Api.Domain.csproj",
         "projectName": "Api.Domain",
-        "projectPath": "C:\\Users\\Luluzera\\Desktop\\Projetos\\AngularWebApiNetCore\\ApiNetCore\\Api.Domain\\Api.Domain.csproj",
+        "projectPath": "C:\\Users\\Luluzera\\Desktop\\Projetos\\GIT\\ApiNetCore\\Api.Domain\\Api.Domain.csproj",
         "packagesPath": "C:\\Users\\Luluzera\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luluzera\\Desktop\\Projetos\\AngularWebApiNetCore\\ApiNetCore\\Api.Domain\\obj\\",
+        "outputPath": "C:\\Users\\Luluzera\\Desktop\\Projetos\\GIT\\ApiNetCore\\Api.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
