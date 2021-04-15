@@ -59,5 +59,17 @@ namespace Api.Application
 
             return result;
         }
+
+        public async Task<bool> EditAsync(UsuarioView dados)
+        {
+            //Fazer validações se o user esta no padrão certo;
+            var service = new ServiceUsuario();
+
+            bool result = await service.EditAsync(dados);
+
+            return result;
+        }
+
+        
     }
 }

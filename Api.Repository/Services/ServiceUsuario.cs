@@ -30,7 +30,8 @@ namespace Api.Repository.Services
                             PerfilNome = perfis.Nome,
                             // DataCriacao = usuarios.DataCriacao,
                             // DataAtualizacao = usuarios.DataAtualizacao   
-                        }).Take(50).ToListAsync();
+                        // }).Take(50).ToListAsync();
+                        }).ToListAsync();
 
                 var json = JsonSerializer.Serialize(result);
 
@@ -90,6 +91,32 @@ namespace Api.Repository.Services
                     usuariomodel.DataAtualizacao = DateTime.Now;
 
                     await context.Usuariodbset.AddAsync(usuariomodel);
+                    await context.SaveChangesAsync();
+
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task<bool> EditAsync (UsuarioView dados)
+        {
+            using (var context = new EntityDbContext())
+            {
+                try
+                {
+                    var Usuario = await context.Usuariodbset.FindAsync(dados.id);
+
+                    Usuario.User = dados.User.ToString();
+                    //usuariomodel.Senha = dados.Senha.ToString();
+                    Usuario.Nome = dados.Nome.ToString();
+                    Usuario.PerfilId = dados.PerfilId;
+                    //usuariomodel.DataCriacao = DateTime.Now;
+                    Usuario.DataAtualizacao = DateTime.Now;
+                    
                     await context.SaveChangesAsync();
 
                     return true;

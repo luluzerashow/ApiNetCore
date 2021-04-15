@@ -93,5 +93,27 @@ namespace Api.WebApi.Controllers
             }
             
         }
+
+        [HttpPut]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(404)]
+        [ProducesResponseType(500)]
+        // [Consumes("application/json")]
+        [Route("EditAsync", Name = "EditAsync")]
+        public async Task<IActionResult> EditAsync(UsuarioView dados)
+        {
+            try
+            {
+                var _appusuario = new appUsuario();
+                //Chamando camada de aplicação
+                return Ok(await _appusuario.EditAsync(dados));
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
+            }
+            
+        }
+        
     }
 }

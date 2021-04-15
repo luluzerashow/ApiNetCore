@@ -300,4 +300,9 @@ __pycache__/
 # Cake - Uncomment if you are using it
 # tools/
 
+.cache
+.bin
+.obj
+.dll
+.pdb
 # End of https://www.toptal.com/developers/gitignore/api/angular,aspnetcore
