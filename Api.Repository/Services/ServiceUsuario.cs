@@ -30,7 +30,7 @@ namespace Api.Repository.Services
                             PerfilNome = perfis.Nome,
                             // DataCriacao = usuarios.DataCriacao,
                             // DataAtualizacao = usuarios.DataAtualizacao   
-                        // }).Take(50).ToListAsync();
+                        //  }).Take(50).ToListAsync();
                         }).ToListAsync();
 
                 var json = JsonSerializer.Serialize(result);
