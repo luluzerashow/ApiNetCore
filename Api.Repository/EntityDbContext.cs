@@ -31,6 +31,7 @@ namespace Api.Repository
         #region DbSets
         public DbSet<Perfil> Perfildbset { get; set; }
         public DbSet<Usuario> Usuariodbset { get; set; }
+        public DbSet<Faixas> Faixasbset { get; set; }
         #endregion
 
 

@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Threading.Tasks;
 using Api.Application;
+using Api.Domain.Models;
 using Api.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,38 +10,18 @@ namespace Api.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]/")]
-    public class PerfilController : ControllerBase
+    public class FaixasController : ControllerBase
     {
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        [Route("GetPerfisCombo")]
-        public async Task<IActionResult> GetPerfisCombo()
+        [Route("FaixasGetAllAsync")]
+        public async Task<IActionResult> FaixasGetAllAsync()
         {
             try
             {
-                var _appulogin = new appLogin();
-                //Chamando camada de aplicação
-                return Ok(await _appulogin.GetPerfisCombo());
-            }
-            catch (ArgumentException e)
-            {
-                return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
-            }
-
-        }
-
-        [HttpGet]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(404)]
-        [ProducesResponseType(500)]
-        [Route("PerfilGetAllAsync")]
-        public async Task<IActionResult> PerfilGetAllAsync()
-        {
-            try
-            {
-                var _app = new appPerfil();
+                var _app = new appFaixas();
                 //Chamando camada de aplicação
                 return Ok(await _app.GetAllAsync());
             }
@@ -55,12 +36,12 @@ namespace Api.WebApi.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        [Route("PerfilGetByIdAsync/{id}", Name = "PerfilGetByIdAsync")]
-        public async Task<IActionResult> PerfilGetByIdAsync(int id)
+        [Route("FaixasGetByIdAsync/{id}", Name = "FaixasGetByIdAsync")]
+        public async Task<IActionResult> FaixasGetByIdAsync(int id)
         {
             try
             {
-                var _app = new appPerfil();
+                var _app = new appFaixas();
                 //Chamando camada de aplicação
                 return Ok(await _app.GetByIdAsync(id));
             }
@@ -75,12 +56,12 @@ namespace Api.WebApi.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
-        [Route("PerfilDeleteByIdAsync/{id}", Name = "PerfilDeleteByIdAsync")]
-        public async Task<IActionResult> PerfilDeleteByIdAsync(int id)
+        [Route("FaixasDeleteByIdAsync/{id}", Name = "FaixasDeleteByIdAsync")]
+        public async Task<IActionResult> FaixasDeleteByIdAsync(int id)
         {
             try
             {
-                var _app = new appPerfil();
+                var _app = new appFaixas();
                 //Chamando camada de aplicação
                 return Ok(await _app.DeleteAsyncById(id));
             }
@@ -88,7 +69,7 @@ namespace Api.WebApi.Controllers
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
-            
+
         }
 
         [HttpPost]
@@ -96,12 +77,12 @@ namespace Api.WebApi.Controllers
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         // [Consumes("application/json")]
-        [Route("PerfilCreateAsync", Name = "PerfilCreateAsync")]
-        public async Task<IActionResult> PerfilCreateAsync(PerfilView dados)
+        [Route("FaixasCreateAsync", Name = "FaixasCreateAsync")]
+        public async Task<IActionResult> FaixasCreateAsync(Faixas dados)
         {
             try
             {
-                var _app = new appPerfil();
+                var _app = new appFaixas();
                 //Chamando camada de aplicação
                 return Ok(await _app.CreateAsync(dados));
             }
@@ -109,7 +90,7 @@ namespace Api.WebApi.Controllers
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
-            
+
         }
 
         [HttpPut]
@@ -117,12 +98,12 @@ namespace Api.WebApi.Controllers
         [ProducesResponseType(404)]
         [ProducesResponseType(500)]
         // [Consumes("application/json")]
-        [Route("PerfilEditAsync", Name = "PerfilEditAsync")]
-        public async Task<IActionResult> PerfilEditAsync(PerfilView dados)
+        [Route("FaixasEditAsync", Name = "FaixasEditAsync")]
+        public async Task<IActionResult> FaixasEditAsync(Faixas dados)
         {
             try
             {
-                var _app = new appPerfil();
+                var _app = new appFaixas();
                 //Chamando camada de aplicação
                 return Ok(await _app.EditAsync(dados));
             }
@@ -130,7 +111,7 @@ namespace Api.WebApi.Controllers
             {
                 return StatusCode((int)HttpStatusCode.InternalServerError, e.Message);
             }
-            
-        }     
+
+        }
     }
 }
